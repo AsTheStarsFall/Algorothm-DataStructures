@@ -1,6 +1,6 @@
 package com.tioanhy;
 
-import com.tioanhy.linkedlist.LRUBasedLinkedList;
+import com.tioanhy.datastructure.greek.linkedlist.LRUBasedLinkedList;
 
 import java.util.Scanner;
 

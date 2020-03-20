@@ -1,4 +1,4 @@
-package com.tioanhy.linkedlist;
+package com.tioanhy.datastructure.greek.linkedlist;
 
 import lombok.Data;
 

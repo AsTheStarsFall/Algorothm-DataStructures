@@ -1,7 +1,6 @@
 package com.tioanhy;
 
 import lombok.extern.slf4j.Slf4j;
-import org.nutz.json.Json;
 
 import java.util.Stack;
 
@@ -35,15 +34,15 @@ public class StackTest {
             stacks.push("thy"+i);
             System.out.println(stacks.search("thy" + i));
         }
-        System.out.println(Json.toJson(stacks));
+//        System.out.println(Json.toJson(stacks));
 
         String pop = stacks.pop();
         System.out.println(pop);
-        System.out.println(Json.toJson(stacks));
+//        System.out.println(Json.toJson(stacks));
 
         String peek = stacks.peek();
         System.out.println(peek);
-        System.out.println(Json.toJson(stacks));
+//        System.out.println(Json.toJson(stacks));
 
     }
 }

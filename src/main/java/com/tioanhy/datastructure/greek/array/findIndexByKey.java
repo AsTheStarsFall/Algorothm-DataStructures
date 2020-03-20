@@ -1,4 +1,4 @@
-package com.tioanhy.array;
+package com.tioanhy.datastructure.greek.array;
 
 /**
  * {@link}
@@ -65,4 +65,6 @@ public class findIndexByKey {
             return i;
         }
     }
+
+    //思路：将要查询的key值放在最后，通过遍历数组和key比较，如果不等则i+1,如果等于说明下标i的元素就是key
 }

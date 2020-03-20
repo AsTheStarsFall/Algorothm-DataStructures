@@ -1,14 +1,13 @@
-package com.tioanhy.array;
+package com.tioanhy.datastructure.greek.array;
 
 import lombok.extern.slf4j.Slf4j;
-import org.nutz.json.Json;
 
 import java.util.*;
 
 /**
  * {@link}
  *
- * @Desc: 基于数组实现LRU缓存
+ * @Desc: 基于数组实现LRU（最近最少使用）缓存
  * @Author: thy
  * @CreateTime: 2019/5/5
  **/
@@ -123,4 +122,6 @@ public class LRUBasedArray<T> {
         }
         return sb.toString();
     }
+
+    //思路：新入元素放在首位，其他的元素右移，如果新添加的元素已经存在，重新放在首位
 }

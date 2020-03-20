@@ -1,6 +1,6 @@
 package com.tioanhy;
 
-import com.tioanhy.array.LRUBasedArray;
+import com.tioanhy.datastructure.greek.array.LRUBasedArray;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -27,10 +27,20 @@ public class LRUBasedArrayTest {
         log.debug(lruBasedArray.toString());
         lruBasedArray.offer(4);
         log.debug(lruBasedArray.toString());
+        lruBasedArray.offer(2);
+        log.debug(lruBasedArray.toString());
 //        lruBasedArray.offer(2);
 //        log.debug(lruBasedArray.toString());
 //        lruBasedArray.offer(3);
 //        log.debug(lruBasedArray.toString());
+
+        /**
+         * DEBUG [main] - *********有参测试
+         * DEBUG [main] - 1
+         * DEBUG [main] - 2 1
+         * DEBUG [main] - 3 2 1
+         * DEBUG [main] - 4 3 2 1
+         */
 
     }
 

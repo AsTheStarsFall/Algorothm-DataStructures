@@ -1,12 +1,14 @@
-package com.tioanhy.linkedlist;
+package com.tioanhy.datastructure.greek.linkedlist;
 
-import lombok.Data;
 
 
 /**
  * {@link}
  *
  * @Desc: 基于单链表的LRU淘汰缓存算法
+ * <p>
+ * 思路：每次插入链表时，将头节点后继指针指向当前元素
+ * 所以靠前的是新元素，越靠后的越是最少使用的
  * @Author: thy
  * @CreateTime: 2019/5/5
  **/
@@ -45,6 +47,7 @@ public class LRUBasedLinkedList<T> {
      * @param data
      */
     public void add(T data) {
+        //前继节点
         SNode preNode = findPreNode(data);
 
         //如果能找到当前元素的前驱结点，说明当前元素在链表已经存在
@@ -79,6 +82,7 @@ public class LRUBasedLinkedList<T> {
             if (data.equals(node.next.element)) {
                 return node;
             }
+
             //否则将头结点的后续结点赋值给node，继续遍历
             node = node.next;
         }
@@ -108,7 +112,8 @@ public class LRUBasedLinkedList<T> {
     private void insertElemAtBegin(T data) {
         //获取头结点的next指针
         SNode headNodeNext = headNode.getNext();
-        //把头结点的next指针赋值给要插入的结点
+
+        //TODO 重点：把头结点的next指针赋值给要插入的结点
         headNode.setNext(new SNode(data, headNodeNext));
         length++;
     }
@@ -145,7 +150,7 @@ public class LRUBasedLinkedList<T> {
     public void printAll() {
         SNode node = headNode.getNext();
         while (node != null) {
-            System.out.print(node.getElement() + ",");
+            System.out.print(node.getElement() +  ",");
             node = node.getNext();
         }
         System.out.println();
@@ -154,9 +159,9 @@ public class LRUBasedLinkedList<T> {
 
     /**
      * 结点信息
+     *
      * @param <T>
      */
-    @Data
     public class SNode<T> {
 
         private T element;
@@ -174,6 +179,22 @@ public class LRUBasedLinkedList<T> {
 
         public SNode() {
             this.next = null;
+        }
+
+        public T getElement() {
+            return element;
+        }
+
+        public void setElement(T element) {
+            this.element = element;
+        }
+
+        public SNode getNext() {
+            return next;
+        }
+
+        public void setNext(SNode next) {
+            this.next = next;
         }
     }
 }

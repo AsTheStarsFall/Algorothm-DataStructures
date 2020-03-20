@@ -1,4 +1,4 @@
-package com.tioanhy.stack;
+package com.tioanhy.datastructure.greek.stack;
 
 /**
  * {@link}
@@ -10,13 +10,13 @@ package com.tioanhy.stack;
 public class ArrayStack {
 
     //临时数组
-    private String[] temps ;
+    private String[] temps;
 
     // 数组
     private String[] items;
     // 栈中的元素个数
     private int count = 0;
-     //栈的大小
+    //栈的大小
     private int n;
 
     // 初始化，申请一个大小为n的数组
@@ -31,7 +31,8 @@ public class ArrayStack {
     public void push(String item) {
         //如果count元素个数 == 数组长度，栈满
         if (count == items.length) {
-            resize(2*items.length);
+            //扩容
+            resize(2 * items.length);
         }
         //将数据放入count位置
         items[count] = item;
@@ -50,17 +51,18 @@ public class ArrayStack {
         //处于栈顶的数据
         String tem = items[count - 1];
         //将原来处于栈顶的数据删除
-        items[count -1] = null;
+        items[count - 1] = null;
         --count;
         return tem;
     }
 
     //扩容
-    private void resize(int length){
+    private void resize(int length) {
         temps = new String[length];
         for (int i = 0; i < count; i++) {
             temps[i] = items[i];
         }
         items = temps;
     }
+    //思路: 重点是出栈，出栈将栈顶的元素移出：将要出栈的元素保存到临时数组并返回，再将其位置的元素置为null
 }

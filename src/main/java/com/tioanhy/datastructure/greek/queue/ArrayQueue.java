@@ -1,4 +1,4 @@
-package com.tioanhy.queue;
+package com.tioanhy.datastructure.greek.queue;
 
 /**
  * {@link}
